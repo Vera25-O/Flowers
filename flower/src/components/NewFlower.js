@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function NewShoeForm({ updateShoes }) {
+function NewFlower({ updateFlowers }) {
   const [newData, setNewData] = useState({
     name: "",
     image: "",
@@ -53,13 +53,13 @@ function NewShoeForm({ updateShoes }) {
       <input
         value={newData.image}
         name="image"
-        placeholder="Put your shoe image url here..."
+        placeholder="Put your flower image url here..."
         onChange={doChange}
       />
-      <input type="submit" value="Post your shoe" />
+      <input type="submit" value="Post your flower" />
     </form>
     </div>
   );
 }
 
-export default NewShoeForm;
+export default NewFlower;
