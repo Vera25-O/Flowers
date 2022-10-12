@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-function Shoe({ id, name, description, image, favorite, updateShoes }) {
+function Flower({ id, name, description, image, favorite, updateFlowers }) {
   const [likes, setLikes] = useState(0);
 
   function coutLikes() {
@@ -18,7 +18,7 @@ function Shoe({ id, name, description, image, favorite, updateShoes }) {
       body: JSON.stringify({ favourite: !favorite }),
     })
       .then((response) => response.json())
-      .then((data) => updateShoes(data))
+      .then((data) => updateFlowers(data))
 
       .catch((error) => console.log(error));
   }
@@ -26,7 +26,7 @@ function Shoe({ id, name, description, image, favorite, updateShoes }) {
   return (
     <div id={id}>
       <h3>{name}</h3>
-      <img src={image} alt="shoe" />
+      <img src={image} alt="flower" />
       <p>
         <strong>{description}</strong>
       </p>
@@ -41,4 +41,4 @@ function Shoe({ id, name, description, image, favorite, updateShoes }) {
   );
 }
 
-export default Shoe;
+export default Flower;
