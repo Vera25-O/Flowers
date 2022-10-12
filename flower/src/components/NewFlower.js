@@ -25,7 +25,7 @@ function NewFlower({ updateFlowers }) {
       })
         .then((response) => response.json())
         .then((data) => {
-          updateShoes(data);
+          updateFlowers(data);
           setNewData({ ...newData, name: "", description: "", image: "" });
         });
     }
