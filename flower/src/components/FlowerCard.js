@@ -20,14 +20,14 @@ function FlowerCard({ flowers, setFlowers }) {
     setFlowers(updatedFlowers);
   }
 
-  const filteredFlowers = shoes.filter((flower) => {
+  const filteredFlowers = flowers.filter((flower) => {
     if (selectedOption === "All") {
       return flower;
     }
     return flower.favourite === true && selectedOption === "favourite";
   });
 
-  const displayFlower = filteredFlowers.map((flower) => {
+  const displayFlowers = filteredFlowers.map((flower) => {
     return (
       <Flower
         key={flower.id}
@@ -45,13 +45,13 @@ function FlowerCard({ flowers, setFlowers }) {
   return (
     <div className="shoes-container">
       <select onChange={handleSelect} value={selectedOption} className="select-bar">
-        <option value="All">All Shoes</option>
+        <option value="All">All Flowers</option>
         <option value="favourite">Favorites</option>
       </select>
      
-      {displayShoes}
+      {displayFlowers}
     </div>
   );
 }
 
-export default ShoesContainer;
+export default FlowerCard;
