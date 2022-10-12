@@ -1,4 +1,5 @@
 import { useState } from "react";
+import React, { Component }  from 'react';
 
 function NewFlower({ updateFlowers }) {
   const [newData, setNewData] = useState({
