@@ -42,31 +42,31 @@ a {
   width: 100%;
 }
 
-.shoes-container {
+.flowers-card {
   max-width: 30em;
   margin: auto;
 }
 
-.shoes-container > div {
+.flowers-card > div {
   border-bottom: solid 1px gold;
   padding-bottom: 1em;
   min-width: 20em;
 }
 
-.shoes-container > div > button {
+.flowers-card > div > button {
   min-width: 4em;
   
 }
 
-form.new-shoe-form {
+form.new-flower {
   border: solid black 1px;
   padding: 1em;
   display: flex;
   flex-direction: column;
 }
 
-form.new-shoe-form > input,
-form.new-shoe-form > textarea {
+form.new-flower > input,
+form.new-flower > textarea {
   font-size: 1em;
   font-family: sans-serif;
   margin-bottom: 0.5em;

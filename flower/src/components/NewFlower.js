@@ -38,7 +38,7 @@ function NewFlower({ updateFlowers }) {
 
   return (
     <div className="sidebar">
-    <form className="new-shoe-form" onSubmit={onSubmission}>
+    <form className="new-flower" onSubmit={onSubmission}>
       <input
         value={newData.name}
         name="name"

@@ -43,7 +43,7 @@ function FlowerCard({ flowers, setFlowers }) {
   });
 
   return (
-    <div className="shoes-container">
+    <div className="flowers-card">
       <select onChange={handleSelect} value={selectedOption} className="select-bar">
         <option value="All">All Flowers</option>
         <option value="favourite">Favorites</option>
