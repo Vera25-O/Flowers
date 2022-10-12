@@ -2,16 +2,35 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+    <BrowserRouter>
     <App />
-  </React.StrictMode>
+    </BrowserRouter>
+
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+var colors = ["silver", "pink", "gold"]
+var currentColor = 0
+var textColor = document.getElementsByTagName("h1")
+
+function changeColor() {
+  --currentColor
+  if (currentColor < 0) currentColor = colors.length - 1
+  for (var i = 0; i < textColor.length; i++) {
+    textColor[i].style.color = colors[(currentColor + i) % colors.length]
+  }
+}
+
+setInterval(changeColor, 2000)
+
+
+
+
+
+
+

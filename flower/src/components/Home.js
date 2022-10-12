@@ -4,7 +4,7 @@ function Home() {
   return (
     <div className='home'>
       <h1>ABOUT</h1>
-      <h1>SHOEGAME</h1>
+      <h1>FLOWER FOR LIFE</h1>
     <p>
       SHOEGAME is an online platfform where shoe lovers get to post and like the shoes they love most. <br/>
       This is starting from the top brands around the world and the normal user of shoes who really got their preference and amazing taste.<br/>
