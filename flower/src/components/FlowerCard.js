@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Shoe from "./Shoe";
+import Flower  from  "./Flower";
 
-function ShoesContainer({ shoes, setShoes }) {
+function FlowerCard({ flowers, setFlowers }) {
   const [selectedOption, setSelectedOption] = useState("All");
 
   function handleSelect(e) {
@@ -10,33 +10,33 @@ function ShoesContainer({ shoes, setShoes }) {
 
   
 
-  function updateShoes(data) {
-    const updatedShoes = shoes.map((shoe) => {
-      if (shoe.id === data.id) {
+  function updateFlowers(data) {
+    const updatedFlowers = flowers.map((flower) => {
+      if (flower.id === data.id) {
         return data;
       }
-      return shoe;
+      return flower;
     });
-    setShoes(updatedShoes);
+    setFlowers(updatedFlowers);
   }
 
-  const filteredShoes = shoes.filter((shoe) => {
+  const filteredFlowers = shoes.filter((flower) => {
     if (selectedOption === "All") {
-      return shoe;
+      return flower;
     }
-    return shoe.favourite === true && selectedOption === "favourite";
+    return flower.favourite === true && selectedOption === "favourite";
   });
 
-  const displayShoes = filteredShoes.map((shoe) => {
+  const displayFlower = filteredFlowers.map((flower) => {
     return (
-      <Shoe
-        key={shoe.id}
-        favorite={shoe.favourite}
-        id={shoe.id}
-        name={shoe.name}
-        image={shoe.image}
-        description={shoe.description}
-        updateShoes={updateShoes}
+      <Flower
+        key={flower.id}
+        favorite={flower.favourite}
+        id={flower.id}
+        name={flower.name}
+        image={flower.image}
+        description={flower.description}
+        updateFlowers={updateFlowers}
         
       />
     );
