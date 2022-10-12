@@ -31,7 +31,7 @@ const Navbar = () => {
                   to="/new"
                   exact="true"
                 >
-                    <button className="btn">Add Shoe</button>
+                    <button className="btn">Add Flower</button>
                 </NavLink>
            
         </div>
