@@ -1,8 +1,8 @@
 import React from 'react'
 
-import ShoesContainer from "./ShoesContainer";
+import FlowerCard from "./FlowerCard";
 
-function Posts({shoes,setShoes}) {
+function Posts({flowers,setFlowers}) {
 
  
 
@@ -10,7 +10,7 @@ function Posts({shoes,setShoes}) {
   return (
     <div className='post'>
 
-     <ShoesContainer shoes={shoes} setShoes={setShoes} />
+     <FlowerCard flowers={flowers} setFlowers={setFlowers} />
 
     </div>
   )
