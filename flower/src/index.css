@@ -5,6 +5,11 @@ body {
   font-family: sans-serif;
 }
 
+.Login{
+  background-color: azure;
+  color: red;
+}
+
 .nav {
   width: 100%;
   display: flex;

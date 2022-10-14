@@ -18,7 +18,12 @@ const Navbar = () => {
                     <button className="btn">Home</button>
                 </NavLink>
                 
-                
+                <NavLink 
+                  to="/login"
+                  exact="true"
+                >
+                    <button className="btn">Login</button>
+                </NavLink>
                
                 <NavLink 
                   to="/posts"

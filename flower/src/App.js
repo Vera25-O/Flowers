@@ -9,15 +9,16 @@ import Navbar from "./components/Navbar";
 import Home from './components/Home';
 import Posts from './components/Posts';
 import NewFlower from './components/NewFlower';
+import Login from './components/Login'
 //navbarS
 function App() {
   const [flowers, setFlowers] = useState([]);
 
-  useEffect(() => {
-    fetch("http://127.0.0.1:3000/flowers")
-      .then((response) => response.json())
-      .then((flowers) => setFlowers(flowers));
-  }, []);
+  // useEffect(() => {
+  //   fetch("http://127.0.0.1:3000/flowers")
+  //     .then((response) => response.json())
+  //     .then((flowers) => setFlowers(flowers));
+  // }, []);
 
   
 
@@ -34,6 +35,7 @@ function App() {
       
       <Navbar />
       <Routes>
+      <Route exact path="/login" element={<Login />} />
         <Route exact path="/" element={<Home />} />
          <Route exact path="/posts" element={<Posts  flowers={flowers} setFlowers={setFlowers}/>} />
          <Route exact path="/new" element={<NewFlower updateFlowers={upDateFlowers}/>} />
