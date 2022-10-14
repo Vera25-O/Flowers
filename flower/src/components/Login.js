@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import React, { Component }  from 'react';
 
 function Login({ onLogin }) {
+    const history = useNavigate();
     const [formData, setFormData] = useState({
       username: "",
       password: "",
