@@ -14,7 +14,7 @@ function App() {
   const [flowers, setFlowers] = useState([]);
 
   useEffect(() => {
-    fetch("https://morning-stream-44230.herokuapp.com/shoes")
+    fetch("http://127.0.0.1:3000/flowers")
       .then((response) => response.json())
       .then((flowers) => setFlowers(flowers));
   }, []);
