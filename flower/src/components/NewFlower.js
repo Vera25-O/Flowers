@@ -17,7 +17,7 @@ function NewFlower ({ updateFlowers }) {
     ) {
       alert("Please input all fields");
     } else {
-      fetch("http://127.0.0.1:3000/flowers", {
+      fetch("/flowers", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

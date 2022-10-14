@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-function Flower({ id, name, description, image, favorite, updateFlowers }) {
+function Flower({ id, name, description, image, favorite, updateFlowers, handleDelete }) {
   const [likes, setLikes] = useState(0);
 
   function coutLikes() {
@@ -9,7 +9,7 @@ function Flower({ id, name, description, image, favorite, updateFlowers }) {
   }
 
   function addToFavourite() {
-    fetch(`http://127.0.0.1:3000/flowers/${id}`, {
+    fetch(`/flowers/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "Application/json",
@@ -20,6 +20,16 @@ function Flower({ id, name, description, image, favorite, updateFlowers }) {
       .then((response) => response.json())
       .then((data) => updateFlowers(data))
 
+      .catch((error) => console.log(error));
+  }
+
+  function addToDelete() {
+    fetch(`/flowers/${id}`, {
+      method: "DELETE"
+    })
+      .then((response) => response.json())
+      .then((data) => handleDelete(id))
+      
       .catch((error) => console.log(error));
   }
 
@@ -36,6 +46,10 @@ function Flower({ id, name, description, image, favorite, updateFlowers }) {
 
       <button onClick={addToFavourite}>
         {favorite ? "Remove Favourite" : "Add Favourite"}
+      </button>
+
+      <button onClick={addToDelete}>
+        Delete
       </button>
     </div>
   );

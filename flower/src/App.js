@@ -15,7 +15,7 @@ function App() {
   const [flowers, setFlowers] = useState([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:3000/flowers")
+    fetch("/flowers")
       .then((response) => response.json())
       .then((flowers) => setFlowers(flowers));
   }, []);
