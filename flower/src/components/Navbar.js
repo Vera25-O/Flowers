@@ -13,6 +13,10 @@ const Navbar = () => {
         <button className="btn">Login</button>
       </NavLink>
 
+      <NavLink to="/register" exact="true">
+        <button className="btn">Register</button>
+      </NavLink>
+
       <NavLink to="/posts" exact="true">
         <button className="btn">Posts</button>
       </NavLink>
