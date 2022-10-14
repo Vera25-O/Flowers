@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom"
 import React, { Component }  from 'react';
 
 function Login({ onLogin }) {
@@ -34,21 +35,20 @@ function Login({ onLogin }) {
 
   return (
     <div className="login">
-    <form className="new-flower" onSubmit={onSubmission}>
+    <form onSubmit={handleSubmit}>
       <input
-        value={newData.name}
-        name="name"
-        placeholder="Username"
-        onChange={doChange}
+        type="text"
+        name="username"
+        value={formData.username}
+        onChange={handleChange}
       />
-      
       <input
-        value={newData.image}
-        name="image"
-        placeholder="Password"
-        onChange={doChange}
+        type="password"
+        name="password"
+        value={formData.password}
+        onChange={handleChange}
       />
-      <input type="submit" value="Login" />
+      <button type="submit">Login</button>
     </form>
     </div>
   );
