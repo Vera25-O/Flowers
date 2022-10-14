@@ -9,6 +9,8 @@ body {
   background:aqua;
   color: black;
   margin-top: 6%;
+  width: 50%;
+  margin-left: 20%;
 }
 
 .nav {
