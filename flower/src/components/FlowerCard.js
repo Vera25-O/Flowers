@@ -20,10 +20,20 @@ function FlowerCard({ flowers, setFlowers }) {
     setFlowers(updatedFlowers);
   }
 
+  function handleDelete(id) {
+
+    const deleted =  flowers.filter((flower) =>{
+          return flower.id !== id
+      })
+      setFlowers(deleted)
+    }
+  
+
   const filteredFlowers = flowers.filter((flower) => {
     if (selectedOption === "All") {
       return flower;
     }
+    // return employee.delete === true && selectedOption === "delete";
     return flower.favourite === true && selectedOption === "favourite";
   });
 
@@ -37,6 +47,7 @@ function FlowerCard({ flowers, setFlowers }) {
         image={flower.image}
         description={flower.description}
         updateFlowers={updateFlowers}
+        handleDelete={handleDelete}
         
       />
     );
