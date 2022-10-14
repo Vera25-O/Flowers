@@ -33,8 +33,8 @@ function FlowerCard({ flowers, setFlowers }) {
     if (selectedOption === "All") {
       return flower;
     }
-    // return employee.delete === true && selectedOption === "delete";
-    return flower.favourite === true && selectedOption === "favourite";
+    return flower.delete === true && selectedOption === "delete";
+    
   });
 
   const displayFlowers = filteredFlowers.map((flower) => {
@@ -57,7 +57,6 @@ function FlowerCard({ flowers, setFlowers }) {
     <div className="flowers-card">
       <select onChange={handleSelect} value={selectedOption} className="select-bar">
         <option value="All">All Flowers</option>
-        <option value="favourite">Favorites</option>
       </select>
      
       {displayFlowers}
