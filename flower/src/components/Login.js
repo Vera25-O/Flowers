@@ -34,7 +34,7 @@ function Login ({ updateFlowers }) {
   }
 
   return (
-    <div className="sidebar">
+    <div className="login">
     <form className="new-flower" onSubmit={onSubmission}>
       <input
         value={newData.name}

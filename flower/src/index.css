@@ -5,9 +5,9 @@ body {
   font-family: sans-serif;
 }
 
-.Login{
-  background-color: azure;
-  color: red;
+.login{
+  background:aqua;
+  color: black;
 }
 
 .nav {
