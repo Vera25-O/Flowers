@@ -36,7 +36,7 @@ function Login({ onLogin }) {
 
   return (
     <div className="login">
-    <form onSubmit={handleSubmit}>
+    <form className="sign" onSubmit={handleSubmit}>
       <input
         type="text"
         name="username"
