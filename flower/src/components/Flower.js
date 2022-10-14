@@ -9,7 +9,7 @@ function Flower({ id, name, description, image, favorite, updateFlowers }) {
   }
 
   function addToFavourite() {
-    fetch(`https://morning-stream-44230.herokuapp.com/shoes/${id}`, {
+    fetch(`http://127.0.0.1:3000/flowers/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "Application/json",
