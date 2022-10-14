@@ -1,37 +1,36 @@
 import { useState } from "react";
 import React, { Component }  from 'react';
 
-function Login ({ updateFlowers }) {
-    const [newData, setNewData] = useState({
-        username: "",
-        password_digest: ""
+function Login({ onLogin }) {
+    const [formData, setFormData] = useState({
+      username: "",
+      password: "",
+    });
+  
+    function handleChange(e) {
+      setFormData({
+        ...formData,
+        [e.target.name]: e.target.value,
       });
-  function onSubmission(e) {
-    e.preventDefault();
-    if (
-      newData.username === "" ||
-      newData.password_digest === "" 
-    ) {
-      alert("Please input all fields");
-    } else {
-      fetch("http://127.0.0.1:3000/flowers", {
+    }
+  
+    function handleSubmit(e) {
+      e.preventDefault();
+      fetch("http://localhost:3001/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(newData),
+        body: JSON.stringify(formData),
       })
-        .then((response) => response.json())
-        .then((data) => {
-          updateFlowers(data);
-          setNewData({ ...newData, name: "", description: "", image: "" });
+        .then((r) => r.json())
+        .then((user) => {
+          onLogin(user);
+          // after logging the user in, redirect to the home page!
+          history.push("/home");
         });
     }
-  }
-
-  function doChange(e) {
-    setNewData({ ...newData, [e.target.name]: e.target.value });
-  }
+  
 
   return (
     <div className="login">
