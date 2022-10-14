@@ -28,7 +28,7 @@ function Login({ onLogin }) {
         .then((r) => r.json())
         .then((user) => {
           onLogin(user);
-          // after logging the user in, redirect to the home page!
+        
           history.push("/home");
         });
     }
