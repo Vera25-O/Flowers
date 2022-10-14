@@ -39,22 +39,17 @@ function Login ({ updateFlowers }) {
       <input
         value={newData.name}
         name="name"
-        placeholder="Name"
+        placeholder="Username"
         onChange={doChange}
       />
-      <input
-        value={newData.description}
-        name="description"
-        placeholder="Description"
-        onChange={doChange}
-      />
+      
       <input
         value={newData.image}
         name="image"
-        placeholder="Put your flower image url here..."
+        placeholder="Password"
         onChange={doChange}
       />
-      <input type="submit" value="Post your flower" />
+      <input type="submit" value="Login" />
     </form>
     </div>
   );
