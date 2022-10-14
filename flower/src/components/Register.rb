@@ -43,23 +43,20 @@ function Register({ onLogin }) {
         name="username"
         placeholder="Username"
         value={formData.username}
-        onChange={handleChange}
-      />
+        onChange={handleChange}/>
       <input
         type="password"
         name="password"
         placeholder="Password"
         value={formData.password}
-        onChange={handleChange}
-      />
+        onChange={handleChange}/>
 
       <input
         type="password"
         name="password"
         placeholder="Confirm Password"
         value={formData.password}
-        onChange={handleChange}
-      />
+        onChange={handleChange}/>
       <button type="submit">Login</button>
     </form>
     </div>
