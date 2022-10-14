@@ -37,6 +37,7 @@ function NewFlower ({ updateFlowers }) {
   }
 
   return (
+    <>
     <div className="sidebar">
     <form className="new-flower" onSubmit={onSubmission}>
       <input
@@ -60,7 +61,9 @@ function NewFlower ({ updateFlowers }) {
       <input type="submit" value="Post your flower" />
     </form>
     </div>
+    </>
   );
+  
 }
 
 export default NewFlower;
