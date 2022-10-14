@@ -5,6 +5,13 @@ body {
   font-family: sans-serif;
 }
 
+.sign{
+  border: solid black 1px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
 .login{
   background:aqua;
   color: black;
