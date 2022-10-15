@@ -32,7 +32,7 @@ function Login({ setCurrentUser }) {
           .then((user) => {
             setCurrentUser(user);
             history("/posts");
-            alert('Login successful')
+            // alert('Login successful')
           });
          }
          else{

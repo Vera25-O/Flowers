@@ -2,12 +2,10 @@ import { NavLink } from "react-router-dom";
 
 import React from "react";
 
-const Navbar = ({currentUser}) => {
+const Navbar = ({currentUser,logoutUser}) => {
   return (
     <div className="nav">
-      <NavLink to="/" exact="true">
-        <button className="btn">Home</button>
-      </NavLink>
+     
 
       {currentUser?<NavLink to="/posts" exact="true"> 
       <button className="btn">Posts</button>
@@ -24,6 +22,15 @@ const Navbar = ({currentUser}) => {
        <NavLink to="/new" exact="true">
         <button className="btn">Add Flower</button>
       </NavLink>}
+
+      {currentUser?
+       <NavLink onClick={logoutUser} exact="true">
+       <button className="btn">Sign Out</button>
+     </NavLink> 
+     :
+     <NavLink to="/" exact="true">
+       <button className="btn">Home</button>
+     </NavLink>}
     </div>
   );
 };
