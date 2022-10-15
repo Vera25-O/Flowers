@@ -1,18 +1,19 @@
 import React from "react";
-import { useState } from "react";
 
-function Flower({ id, name, description, image, favorite, updateFlowers, handleDelete }) {
-  
-  
-
-  
+function Flower({
+  id,
+  name,
+  description,
+  image,
+  handleDelete,
+}) {
   function addToDelete() {
     fetch(`/flowers/${id}`, {
-      method: "DELETE"
+      method: "DELETE",
     })
-      .then((response) => response.json())
+      // .then((response) => response.json())
       .then((data) => handleDelete(id))
-      
+
       .catch((error) => console.log(error));
   }
 
@@ -23,13 +24,8 @@ function Flower({ id, name, description, image, favorite, updateFlowers, handleD
       <p>
         <strong>{description}</strong>
       </p>
-      
 
-      
-
-      <button onClick={addToDelete}>
-        Delete
-      </button>
+      <button onClick={addToDelete}>Delete</button>
     </div>
   );
 }
