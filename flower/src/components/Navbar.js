@@ -19,9 +19,9 @@ const Navbar = () => {
 
       <NavLink to="/posts" exact="true">
         <button className="btn">Posts</button>
-      </NavLink>
+      </NavLink> 
 
-      <NavLink to="/new" exact="true">
+       <NavLink to="/new" exact="true">
         <button className="btn">Add Flower</button>
       </NavLink>
     </div>

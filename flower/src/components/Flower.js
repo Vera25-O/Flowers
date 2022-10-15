@@ -11,7 +11,6 @@ function Flower({
     fetch(`/flowers/${id}`, {
       method: "DELETE",
     })
-      // .then((response) => response.json())
       .then((data) => handleDelete(id))
 
       .catch((error) => console.log(error));
