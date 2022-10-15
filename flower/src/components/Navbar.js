@@ -2,28 +2,28 @@ import { NavLink } from "react-router-dom";
 
 import React from "react";
 
-const Navbar = () => {
+const Navbar = ({currentUser}) => {
   return (
     <div className="nav">
       <NavLink to="/" exact="true">
         <button className="btn">Home</button>
       </NavLink>
 
+      {currentUser?<NavLink to="/posts" exact="true"> 
+      <button className="btn">Posts</button>
+      </NavLink> :
       <NavLink to="/login" exact="true">
         <button className="btn">Login</button>
-      </NavLink>
+      </NavLink> }
 
-      <NavLink to="/register" exact="true">
+      
+
+      {!currentUser? <NavLink to="/register" exact="true">
         <button className="btn">Register</button>
-      </NavLink>
-
-      <NavLink to="/posts" exact="true">
-        <button className="btn">Posts</button>
-      </NavLink> 
-
+      </NavLink>:
        <NavLink to="/new" exact="true">
         <button className="btn">Add Flower</button>
-      </NavLink>
+      </NavLink>}
     </div>
   );
 };

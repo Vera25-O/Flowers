@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import React, { Component }  from 'react';
 
-function Register({ onLogin }) {
+function Register({setCurrentUser }) {
     const history = useNavigate();
     const [formData, setFormData] = useState({
       username: "",
@@ -19,7 +19,7 @@ function Register({ onLogin }) {
   
     function handleSubmit(e) {
       e.preventDefault();
-      fetch("http://localhost:3001/login", {
+      fetch("/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -28,7 +28,7 @@ function Register({ onLogin }) {
       })
         .then((r) => r.json())
         .then((user) => {
-          onLogin(user);
+          setCurrentUser(user);
         
           history.push("/home");
         });

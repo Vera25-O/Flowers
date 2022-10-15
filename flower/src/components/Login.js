@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import React, { Component }  from 'react';
 
-function Login({ onLogin }) {
+function Login({ setCurrentUser }) {
     const history = useNavigate();
     const [formData, setFormData] = useState({
       username: "",
@@ -17,20 +17,30 @@ function Login({ onLogin }) {
     }
   
     function handleSubmit(e) {
+      console.log(JSON.stringify(formData))
       e.preventDefault();
-      fetch("http://localhost:3001/login", {
+      fetch("/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       })
-        .then((r) => r.json())
-        .then((user) => {
-          onLogin(user);
+        .then((r) => {
+         if(r.ok){
+          r.json()
+          .then((user) => {
+            setCurrentUser(user);
+            history("/posts");
+            alert('Login successful')
+          });
+         }
+         else{
+          alert('Login failed')
+         }
+        })
         
-          history.push("/home");
-        });
+        
     }
   
 

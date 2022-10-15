@@ -13,6 +13,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 //navbarS
 function App() {
+  const[currentUser, setCurrentUser] = useState(null)
   const [flowers, setFlowers] = useState([]);
 
   useEffect(() => {
@@ -27,10 +28,10 @@ function App() {
 
   return (
     <div className="app">
-      <Navbar />
+      <Navbar currentUser={currentUser}/>
       <Routes>
-      <Route exact path="/register" element={<Register />} />
-        <Route exact path="/login" element={<Login />} />
+      <Route exact path="/register" element={<Register setCurrentUser={setCurrentUser} currentUser={currentUser}/>} />
+        <Route exact path="/login" element={<Login setCurrentUser={setCurrentUser} currentUser={currentUser}/>} />
         <Route exact path="/" element={<Home />} />
         <Route
           exact
